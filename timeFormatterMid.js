@@ -35,11 +35,11 @@ export default function formatTimeMid(req, res, next) {
             req.formattedTime = { error: "Invalid Date" };
             return next();
         }
-        timestampParam = parseInt(timestampParam, 10); // 转换为数字
+        timestampParam = parseInt(timestampParam, 10); 
     }
 
     // 格式化时间
     req.formattedTime = timeFormatter(timestampParam);
-    req.timestamp = timestampParam; // 保存时间戳（数字格式）
+    req.timestamp = timestampParam; // 保存时间戳
     next();
 }
