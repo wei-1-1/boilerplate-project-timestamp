@@ -41,7 +41,7 @@ app.get("/api/",
     }
 )
 
-app.get(/^\/api\/(\w+)$/,//需要括号才能识别参数……
+app.get(/^\/api\/(\w+)$/,//这里的正则需要括号才能匹配到参数，(\w+) 可以，而 \w+ 不行……
     (req, res, next) => {
         req.timestamp = req.params[0];
        // console.log(`Route /api/\w+: req.params[0] = ${req.params[0]}, req.timestamp = ${req.timestamp}`);
